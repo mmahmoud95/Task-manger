@@ -42,7 +42,9 @@ const Login = () => {
           router.push('/');
         }, 1000);
       } else {
-        toast.error(data.msg || 'login failed');
+        const data = await res.json();
+        console.log(data);
+        toast.error(data.error || 'login failed');
       }
     } catch (error) {
       console.log(error);
