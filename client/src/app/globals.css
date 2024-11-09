@@ -1,0 +1,33 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+* {
+    box-sizing: border-box;
+}
+
+:root {
+    --background: #ffffff;
+    --foreground: #171717;
+}
+
+@media (prefers-color-scheme: dark) {
+    :root {
+        --background: #0a0a0a;
+        --foreground: #ededed;
+    }
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background: radial-gradient(circle at top left, #181023, #0b0519);
+    color: #c3b3d8;
+    margin: 0;
+    padding: 0;
+    height: 100%;
+}
+
+@media (max-width: 768px) {
+    html {
+        font-size: 12px;
+    }
+}
