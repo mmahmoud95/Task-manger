@@ -11,7 +11,6 @@ This is a RESTful API for managing tasks, allowing users to register, log in, an
   - [Task Endpoints](#task-endpoints)
 - [Environment Variables](#environment-variables)
 - [Technologies](#technologies)
-- [License](#license)
 
 ## Features
 
@@ -30,7 +29,7 @@ git clone https://github.com/yourusername/task-manager-api.git
 cd task-manager-api
 Install dependencies:
 
-npm install
+**npm install**
 Set up environment variables:
 
 Copy the .env.example file to a new .env file and update the necessary values.
@@ -43,32 +42,34 @@ MONGO_URI=your-mongo-db-uri
 
 Run the API:
 
-npm start
+**npm start**
 The server should now be running at http://localhost:3000.
 
 **API Endpoints**
 
 # User Endpoints
 
-1.POST /api/auth/register
+- **POST /api/auth/register**
  -Register a new user.
-Body:
-{
+ - Body:
+  ```json
+  {
   "name": "User Name",
   "email": "user@example.com",
   "password": "password123"
-}
+  }
 
-2.POST /api/auth/login
- -Log in an existing user.
-Body:
-{
+- **POST /api/auth/login**
+  - Log in an existing user.
+  - Body:
+  ```json
+  {
   "email": "user@example.com",
   "password": "password123"
-}
+  }
 
-3.POST /api/auth/logout
- -Log out the user by clearing the session token.
+**POST /api/auth/logout**
+  - Log out the user by clearing the session token.
 
 # Task Endpoints
 ## Task Endpoints
