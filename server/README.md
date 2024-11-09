@@ -11,6 +11,7 @@ This is a RESTful API for managing tasks, allowing users to register, log in, an
   - [Task Endpoints](#task-endpoints)
 - [Environment Variables](#environment-variables)
 - [Technologies](#technologies)
+- [License](#license)
 
 ## Features
 
@@ -48,10 +49,9 @@ The server should now be running at http://localhost:3000.
 **API Endpoints**
 
 # User Endpoints
-
 - **POST /api/auth/register**
- -Register a new user.
- - Body:
+  - Register a new user.
+  - Body:
   ```json
   {
   "name": "User Name",
@@ -68,8 +68,8 @@ The server should now be running at http://localhost:3000.
   "password": "password123"
   }
 
-**POST /api/auth/logout**
-  - Log out the user by clearing the session token.
+- **POST /api/auth/logout**
+  - Log out the user by clearing the token.
 
 # Task Endpoints
 ## Task Endpoints
