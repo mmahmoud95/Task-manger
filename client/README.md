@@ -21,8 +21,8 @@ This is the frontend for the Task Manager application. It allows users to manage
 First, clone the repository to your local machine:
 
 ```bash
-git clone https://github.com/your-username/task-manager-frontend.git
-cd task-manager-frontend
+git clone https://github.com/mmahmoud95/Task-manger.git
+cd task-manager
 
 ## Getting Started
 

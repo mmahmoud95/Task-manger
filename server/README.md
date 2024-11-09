@@ -71,30 +71,32 @@ Body:
  -Log out the user by clearing the session token.
 
 # Task Endpoints
+## Task Endpoints
 
-1.GET /api/tasks
- -Get a list of tasks for the authenticated user.
+- **GET /api/tasks**  
+  - Get a list of tasks for the authenticated user.
 
-1.POST /api/tasks
- -Create a new task.
-Body:
-{
-  "title": "Task Title",
-  "description": "Task Description",
-  "dueDate": "2024-12-31"
-}
+- **POST /api/tasks**  
+  - Create a new task.  
+  - Body:  
+  ```json
+  { 
+    "title": "Task Title", 
+    "dueDate": "2024-12-31" 
+  }
 
-2.PATCH /api/tasks/:id
--Update a task by ID.
-Body (optional fields):
-{
-  "title": "Updated Title",
-  "dueDate": "2024-12-25",
-  "complete": true
-}
+- **PATCH /api/tasks/:id**
+  - Update a task by ID.
+  - Body (optional fields):
+  ```json
+  { 
+    "title": "Updated Title", 
+    "dueDate": "2024-12-31",
+    "complete": true 
+  }
 
-3.DELETE /api/tasks/:id
- -Delete a task by ID.
+- **DELETE /api/tasks/:id**
+  - Delete a task by ID.
 
 # Environment Variables
 The following environment variables need to be set up:
@@ -108,6 +110,5 @@ Node.js (v16+)
 Express.js
 MongoDB
 JWT for authentication
-Cookie-Parser for handling cookies
 Zod for input validation
 bcryptjs for password hashing
