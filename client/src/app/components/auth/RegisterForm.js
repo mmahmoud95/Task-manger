@@ -3,9 +3,8 @@
 import Link from 'next/link';
 import { useRouter } from 'next/navigation';
 import { useEffect, useState } from 'react';
-import Loader from '../loader';
 import { toast } from 'react-toastify';
-// import Loader from './loader';
+import Loader from '../Loader';
 
 const Register = () => {
   const router = useRouter();
@@ -75,54 +74,52 @@ const Register = () => {
 
   return (
     <div>
-      {loading ? (
-        <Loader />
-      ) : (
-        <form
-          className="flex flex-col bg-slate-400 p-12 border-2 w-full"
-          onSubmit={submitHandler}
+      {loading ? <Loader /> : <form
+        className="flex flex-col bg-slate-400 p-12 border-2 w-full"
+        onSubmit={submitHandler}
+      >
+        <input
+          name="name"
+          value={name}
+          onChange={handleChange}
+          type="text"
+          placeholder="Enter your Name"
+          className="border rounded-none mb-2 p-2 w-96 sm:w-64 outline-offset-1 outline-sky-900 focus:rounded-none"
+        />
+        <input
+          name="email"
+          value={email}
+          onChange={handleChange}
+          type="email"
+          placeholder="Enter your Email"
+          className="border rounded-none mb-2 p-2 w-96 sm:w-64 outline-offset-1 outline-sky-900 focus:rounded-none"
+        />
+
+        <input
+          name="password"
+          value={password}
+          onChange={handleChange}
+          type="password"
+          placeholder="Enter your Password"
+          className="border rounded-none mb-2 p-2 w-96 sm:w-64 outline-offset-1 outline-sky-900 focus:rounded-none"
+        />
+
+        <button
+          type="submit"
+          className="bg-green-600 p-2 text-2xl text-white mt-4"
+          disabled={loading}
         >
-          <input
-            name="name"
-            value={name}
-            onChange={handleChange}
-            type="text"
-            placeholder="Enter your Name"
-            className="border rounded-none mb-2 p-2 w-96 sm:w-64 outline-offset-1 outline-sky-900 focus:rounded-none"
-          />
-          <input
-            name="email"
-            value={email}
-            onChange={handleChange}
-            type="email"
-            placeholder="Enter your Email"
-            className="border rounded-none mb-2 p-2 w-96 sm:w-64 outline-offset-1 outline-sky-900 focus:rounded-none"
-          />
+          {loading ? 'Submitting...' : 'Register'}
+        </button>
+        <p className="text-lg text-white mt-6">
+          You have account, Please{' '}
+          <Link className="text-sky-900" href="/login">
+            login
+          </Link>
+        </p>
+      </form>}
 
-          <input
-            name="password"
-            value={password}
-            onChange={handleChange}
-            type="password"
-            placeholder="Enter your Password"
-            className="border rounded-none mb-2 p-2 w-96 sm:w-64 outline-offset-1 outline-sky-900 focus:rounded-none"
-          />
 
-          <button
-            type="submit"
-            className="bg-green-600 p-2 text-2xl text-white mt-4"
-            disabled={loading}
-          >
-            {loading ? 'Submitting...' : 'Register'}
-          </button>
-          <p className="text-lg text-white mt-6">
-            You have account, Please{' '}
-            <Link className="text-sky-900" href="/login">
-              login
-            </Link>
-          </p>
-        </form>
-      )}{' '}
     </div>
   );
 };
